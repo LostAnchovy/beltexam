@@ -24,7 +24,7 @@
   <h6>Welcome: {{user_name}}</h6>
   <br>
   <div class="form-group">
-    <input [(ngModel)]="searchText" type="text" class="form-control" name="search" id="search" aria-describedby="helpId" placeholder="Search">
+    <input type="text" class="form-control" name="search" id="search" aria-describedby="helpId" placeholder="Search">
   </div>
 
   <table class="table">
@@ -36,7 +36,7 @@
           
       </tr>
       <tbody *ngFor="let x of question">
-        <td>{{x.user_question | search: searchText}}</td>
+        <td>{{x.user_question}}</td>
         <td>{{0}}</td>
         <td><a [routerLink]="['/onequestion', x._id]">show</a> | <a [routerLink]="['/onequestion',x._id,'newanswer']">answer</a></td>
         <td><button class="btn btn-outline-danger" (click)="removeQuestion(question, x._id)">Delete</button></td>

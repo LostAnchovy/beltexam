@@ -13,7 +13,7 @@ import { QuestionComponent } from './question/question.component';
 import { AnswerComponent } from './answer/answer.component';
 import { DataService } from './data.service';
 import { Pipe, PipeTransform } from '@angular/core';
-import { SearchPipe } from './search.pipe';
+
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { SearchPipe } from './search.pipe';
     CreateComponent,
     QuestionComponent,
     AnswerComponent,
-    SearchPipe
+
   ],
   imports: [
     BrowserModule,

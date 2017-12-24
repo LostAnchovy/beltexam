@@ -4,8 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs'
 import { Router} from "@angular/router";
 import { Pipe, PipeTransform } from '@angular/core'
-import { SearchPipe } from '../search.pipe';
-
 
 @Component({
   selector: 'app-dashboard',
