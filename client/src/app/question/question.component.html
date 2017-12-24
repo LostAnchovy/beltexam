@@ -1,0 +1,45 @@
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<style>
+  .container-fluid{
+    padding: 50px;
+    background-color:whitesmoke;
+    width: 960px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: left;
+    margin: auto;
+    margin-top: 50px;
+  }
+  table{
+    text-align: left;
+  }
+  #question{
+    text-align: center;
+  }
+  h3{
+    color: #428bca
+  }
+</style>
+
+<div class="container-fluid">
+ <a [routerLink]="['/dashboard']" class="float-right">return to poll</a> 
+  <div id="question">
+<h3>{{question.user_question}}</h3>
+<br>
+</div>
+  <table class="table">
+    <tr>
+        <th scope="col">Answer</th>
+        <th scope="col">Like</th>
+        <th scope="col">Like answer</th>
+    </tr>
+    <tbody *ngFor="let k of questions">
+      <td>test</td>
+      <td>test</td>
+      <td><button class="btn btn-outline-primary" (click)=like()>like</button></td>
+    </tbody>
+</table>
+</div>

@@ -1,0 +1,10 @@
+.container-fluid{
+    padding: 50px;
+    background-color:whitesmoke;
+    width: 960px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+  }

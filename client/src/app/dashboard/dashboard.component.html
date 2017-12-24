@@ -1,0 +1,50 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<style>
+  .container-fluid{
+    padding: 30px;
+    background-color:whitesmoke;
+    width: 960px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: left;
+    margin: auto;
+    margin-top: 50px;
+  }
+  table{
+    text-align: left;
+  }
+  #logout{
+    float: right;
+  }
+</style>
+<div class="container-fluid">
+  <button id="logout" class="btn btn-warning" (click)="logout(user_name)">log out</button>
+  <h6>Welcome: {{user_name}}</h6>
+  <br>
+  <div class="form-group">
+    <input [(ngModel)]="searchText" type="text" class="form-control" name="search" id="search" aria-describedby="helpId" placeholder="Search">
+  </div>
+
+  <table class="table">
+      <tr>
+          <th scope="col">Question</th>
+          <th scope="col">Answers</th>
+          <th scope="col">action</th>
+          <th scope="col">remove</th>
+          
+      </tr>
+      <tbody *ngFor="let x of question">
+        <td>{{x.user_question | search: searchText}}</td>
+        <td>{{0}}</td>
+        <td><a [routerLink]="['/onequestion', x._id]">show</a> | <a [routerLink]="['/onequestion',x._id,'newanswer']">answer</a></td>
+        <td><button class="btn btn-outline-danger" (click)="removeQuestion(question, x._id)">Delete</button></td>
+      </tbody>
+  </table>
+  <br>
+  <div>
+  <a href="/create">Add a Question</a>
+    
+  </div>
+</div>

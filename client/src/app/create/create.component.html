@@ -1,0 +1,45 @@
+<header>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</header>
+
+<style>
+  .container-fluid{
+    padding: 50px;
+    background-color:whitesmoke;
+    width: 960px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin: auto;
+    margin-top: 50px;
+  }
+  .cancel{
+    float: right;
+  }
+  h3{
+    color: #428bca;
+  }
+  
+</style>
+<div class="container-fluid">
+  <a href ="/dashboard" class="cancel">cancel</a>
+  <h3>Create a New Question:</h3>
+  <div id="survery_questions">
+    <form #form="ngForm" (submit)="newQuestion()">
+        <div class="form-group">
+          <label>User Name: {{user_name}}</label>
+        </div>
+        <div class="form-group">
+          <label>Question</label>
+          <textarea class="form-control" name="question" required minlength="8" [(ngModel)]="question.user_question" #userquestion="ngModel" rows="2"></textarea>
+        </div>
+        <div *ngIf="userquestion.errors?.required">field required</div>
+        <div *ngIf="userquestion.errors?.minlength">Please enter at least ten characters</div>
+        <div class="form-group">
+          <label>Description (optional)</label>
+          <input type="text" class="form-control"  name="description" [(ngModel)]="question.description" #description="ngModel">
+        </div>
+          <button class="btn btn-primary" [disabled]="!form.valid">create a question</button>
+    </form>
+  </div>
+  {{question | json}}
+</div>

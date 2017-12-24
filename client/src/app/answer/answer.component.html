@@ -1,0 +1,26 @@
+<header>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</header>
+
+<div class="container-fluid">
+  <a href ="/dashboard" class="cancel">cancel</a>
+  <h3>{{question.user_question}}</h3>
+  <div id="answer">
+    <form #form="ngForm" (submit)="newAnswer()">
+        <div class="form-group">
+          <label>User Name: {{user_name}}</label>
+        </div>
+        <div class="form-group">
+          <label>Your Answer</label>
+          <textarea class="form-control" name="answer" required minlength="5" [(ngModel)]="answer.user_answer" #answertoquestion="ngModel" rows="2"></textarea>
+        </div>
+        <div *ngIf="answertoquestion.errors?.required">field required</div>
+        <div *ngIf="answertoquestion.errors?.minlength">Please enter at least five characters</div>
+        <div class="form-group">
+          <label>Supporting Details for you Answer (optional)</label>
+          <input type="text" class="form-control"  name="details" [(ngModel)]="answer.details" #detailstoquestion="ngModel">
+        </div>
+          <button class="btn btn-primary" [disabled]="!form.valid">create an answer</button>
+    </form>
+  </div>
+</div>

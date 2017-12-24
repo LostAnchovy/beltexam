@@ -1,0 +1,15 @@
+  .container-fluid{
+    padding: 50px;
+    background-color:whitesmoke;
+    width: 960px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin: auto;
+    margin-top: 50px
+  }
+  .cancel{
+    float: right;
+  }
+  h3{
+    color:#428bca;
+  }
