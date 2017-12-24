@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs'
 import { Router} from "@angular/router";
 import { Pipe, PipeTransform } from '@angular/core'
-import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import { SearchPipe } from '../search.pipe';
 
 
