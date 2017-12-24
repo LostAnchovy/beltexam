@@ -16,7 +16,7 @@ question;
 answer;
 
   constructor(private _dataService: DataService, private _router: Router) { }
-  logout(){
+  logout(user_name){
     this._dataService.logout('user_name')
     this._router.navigateByUrl('/');
     
