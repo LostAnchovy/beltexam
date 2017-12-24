@@ -12,7 +12,6 @@ import { CreateComponent } from './create/create.component';
 import { QuestionComponent } from './question/question.component';
 import { AnswerComponent } from './answer/answer.component';
 import { DataService } from './data.service';
-import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import { Pipe, PipeTransform } from '@angular/core';
 import { SearchPipe } from './search.pipe';
 
@@ -26,15 +25,12 @@ import { SearchPipe } from './search.pipe';
     QuestionComponent,
     AnswerComponent,
     SearchPipe
-  
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    Ng2FilterPipeModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
